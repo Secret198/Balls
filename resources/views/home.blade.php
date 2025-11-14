@@ -1,12 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Visa info</title>
-</head>
-<body>
-    <h1>This is the homepage</h1>
-</body>
-</html>
+@extends("layouts.template")
+
+@section("content")
+    <h1>{{__("messages.name")}}</h1>
+    <a href="/search">{{ __("messages.choose") }}</a>
+@endsection
