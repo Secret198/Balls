@@ -8,6 +8,10 @@
 </head>
 <body>
     <a href="{{ url()->previous() }}">Back</a>
-    <p>{{ $country[0]["name"] }}</p>
+    @if (count($country) > 0)
+        <p>{{ $country[0]["name"]}}</p>
+    @else
+        <p>Country not found</p>
+    @endif
 </body>
 </html>
