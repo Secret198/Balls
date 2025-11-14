@@ -8,3 +8,4 @@ Route::get('/', function () {
 });
 
 Route::get('/search', [CountryController::class, 'show']);
+Route::get('/search/{countryId}', [CountryController::class, 'search']);
