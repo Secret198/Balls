@@ -1,17 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>View</title>
-</head>
-<body>
-    <a href="{{ url()->previous() }}">Back</a>
+@extends("layouts.template")
+@section("content")
+    <a href="{{ url()->previous() }}"><-(maybe put a picture here)</a>
     @if (count($country) > 0)
         <p>{{ $country[0]["name"]}}</p>
     @else
-        <p>Country not found</p>
+        <p>{{__("messages.not_found")}}</p>
     @endif
-</body>
-</html>
+@endsection
+

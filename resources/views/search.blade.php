@@ -1,15 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Search</title>
-</head>
-<body>
-    <h1>This is the search</h1>
+@extends("layouts.template")
+
+@section("content")
+    <h1>{{__("messages.choose")}}</h1>
     <select name="destination" id="destination">
-        <option value="-">--Choose--</option>
+        <option value="-">--{{__("messages.choose_one")}}--</option>
         @foreach($countries as $country)
             <option value="{{ $country["id"] }}">{{$country["name"]}}</option>
         @endforeach
@@ -26,5 +20,4 @@
         });
             
     </script>
-</body>
-</html>
+@endsection
