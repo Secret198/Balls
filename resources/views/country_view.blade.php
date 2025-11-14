@@ -7,7 +7,7 @@
     <title>View</title>
 </head>
 <body>
-    <p>{{ $country["name"] }}</p>
-    <p>{{ $country }}</p>
+    <a href="{{ url()->previous() }}">Back</a>
+    <p>{{ $country[0]["name"] }}</p>
 </body>
 </html>
