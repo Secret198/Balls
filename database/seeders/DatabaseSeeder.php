@@ -27,7 +27,7 @@ class DatabaseSeeder extends Seeder
         if (($handle = fopen($filePath, 'r')) !== false) {
            
             while (($data = fgetcsv($handle, separator:";")) !== false) {
-                if(!array_key_exists($data[4], $currencies)){
+                if(!in_array($data[4], $currencies)){
                     array_push($currencies, $data[4]);
                     array_push($currencies, $data[5]);
                 }
@@ -41,13 +41,13 @@ class DatabaseSeeder extends Seeder
         }
         for($i = 0;$i<count($currencies);$i+=2){
             DB::table('currencies')->insert([
-                "code" => $currencies[$i],
-                "name" => $currencies[$i+1]
+                "currency_code" => $currencies[$i],
+                "currency_name" => $currencies[$i+1]
             ]);
         }
         for($i = 0;$i<count($continents);$i++){
             DB::table('continents')->insert([
-                "name" => $continents[$i]
+                "continent_name" => $continents[$i]
             ]);
         }
 

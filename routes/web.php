@@ -1,7 +1,11 @@
 <?php
 
+use App\Http\Controllers\CountryController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
+
+Route::get('/search', [CountryController::class, 'show']);
+Route::get('/search/{countryId}', [CountryController::class, 'search']);
